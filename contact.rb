@@ -19,7 +19,7 @@ class Contact
     [@name, @email, @phone]
   end
 
-  ## Class Methods
+  # Class Methods
   class << self
     def from_row(row)
       Contact.new(row[0], row[1], row[2])

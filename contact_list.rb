@@ -1,9 +1,9 @@
 require_relative 'contact'
 require_relative 'contact_database'
 
-ContactDatabase.load
 
 def Menu(command)
+  db = ContactDatabase.new('contact_data.csv')
   if command == "help"
     puts "Here is a list of available commands:"
     puts "new  - Create a new contact"
@@ -21,11 +21,11 @@ def Menu(command)
     puts "Contact's Phone Number (w/ no spaces or symbols)?"
     phone = gets.chomp
 
-    Contact.create(name, email, phone)
+    db.create(name, email, phone)
 
   elsif command == "list"
     puts "Here is a list of all contacts:"
-    ContactDatabase.list
+    db.list
 
   elsif command == "show"
     puts "Will show only "
@@ -36,9 +36,9 @@ def Menu(command)
     Class.find(keyword)
       
   end
+  db.save
 end
 
 puts "Hello! What would you like to do?"
 command = gets.chomp.downcase
 Menu(command)
-ContactDatabase.save
