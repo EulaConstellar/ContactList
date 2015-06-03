@@ -22,7 +22,7 @@ class ContactDatabase
   end
 
   def list
-    puts @contacts
+    @contacts
   end
 
   def create(name,email,phone)
@@ -34,10 +34,10 @@ class ContactDatabase
   end
 
   def show(id)
-    puts @contacts[id-1]
+    @contacts[id-1]
   end
 
   def find(keyword)
-    puts @contacts.select { |contact| contact.match?(keyword) }
+    @contacts.select { |contact| contact.match?(keyword) }
   end
 end

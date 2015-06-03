@@ -25,18 +25,18 @@ def Menu(command)
 
   elsif command == "list"
     puts "Here is a list of all contacts:"
-    db.list
+    puts db.list
 
   elsif command == "show"
     print "What ID would you like to search for? "
     id = gets.chomp.to_i
-    db.show(id)
+    puts db.show(id)
 
 
   elsif command == "find"
     puts "Please enter the name, phone number, or email of the contact you're searching."
     keyword = gets.chomp
-    db.find(keyword)
+    puts db.find(keyword)
   end
   db.save
 end
