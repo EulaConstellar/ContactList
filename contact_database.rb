@@ -21,10 +21,6 @@ class ContactDatabase
     end
   end
 
-  def load
-    
-  end
-
   def list
     puts @contacts
   end
@@ -37,11 +33,11 @@ class ContactDatabase
     @contacts << contact
   end
 
-  def show
-
+  def show(id)
+    puts @contacts[id-1]
   end
 
-  def find
-
+  def find(keyword)
+    puts @contacts.select { |contact| contact.match?(keyword) }
   end
 end

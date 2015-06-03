@@ -10,6 +10,10 @@ class Contact
     @phone = phone
   end
 
+  def match?(keyword)
+    @name.include?(keyword) || @email.include?(keyword) || @phone.include?(keyword)
+  end
+
   def to_s
     # TODO: return string representation of Contact
     "<Contact> #{@name} (#{@phone}; #{@email})"
